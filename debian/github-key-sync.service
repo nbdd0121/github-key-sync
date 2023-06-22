@@ -1,0 +1,10 @@
+[Unit]
+Description=Github Key Sync
+Wants=github-key-sync.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/github-key-sync
+
+[Install]
+WantedBy=multi-user.target

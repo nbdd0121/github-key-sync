@@ -1,0 +1,12 @@
+Source: github-key-sync
+Section: misc
+Priority: optional
+Maintainer: Gary Guo <gary@garyguo.net>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+
+Package: github-key-sync
+Architecture: all
+Depends: ${misc:Depends}
+Description: Automatically `authorized_keys` with GitHub SSH keys

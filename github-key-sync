@@ -1,0 +1,17 @@
+#!/bin/bash
+
+TMP_FILE=$(mktemp)
+tmp_cleanup() {
+    rm -rf $TMP_FILE
+}
+trap tmp_cleanup EXIT
+
+for user in /home/*/ ; do
+    if [ -f $user.ssh/github-key-sync ]; then
+        curl -L "https://github.com/$(cat $user.ssh/github-key-sync).keys" > $TMP_FILE && 
+        ssh-keygen -lf $TMP_FILE &&
+        chown $(stat -c %u $user.ssh) $TMP_FILE &&
+        chmod 600 $TMP_FILE &&
+        mv $TMP_FILE $user.ssh/authorized_keys
+    fi
+done

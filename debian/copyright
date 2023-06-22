@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: github-key-sync
+Upstream-Contact: <preferred name and address to reach the upstream project>
+Source: <url://example.com>
+
+Files: *
+Copyright: 2023 Gary Guo <gary@garyguo.net>
+License: UNLICENSE
